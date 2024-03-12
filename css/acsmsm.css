@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(68deg, #B79891, #94716B  );
+
+}
+
+.container{
+    position: reletive;
+    width: 280px;
+    height: 280px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .container-btn{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 4px rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 1.25s;
+}
+
+
+.container.active .container-btn{
+    transform:rotate(360deg);
+    box-shadow: 0 6px 8px rgba(255, 255, 255, 0.15),0 0 2px #222, 0 0 6px #fff;
+}
+
+.container li{
+    list-style: none;
+    position: absolute;
+    left: 41%;
+    scale: 0;
+    transform: rotate(calc(360deg / 8 * var(--a)));
+    transform-origin: 140px;
+    transition: 0.5s;
+    transition-delay: calc(.05s * var(--a));
+}
+
+.container.active li{
+    scale: 1;
+}
+
+.container li a{
+    position: relative;
+    display: flex;
+    transform: rotate(calc(360deg / -8 * var(--a)));
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 30px;
+    color: var(--clr);
+    text-decoration: none;
+    box-shadow: 0 3px 4px rgba(255, 255, 255, 0.15);
+    transition: .5s;
+}
+
+.container li:hover a{
+    box-shadow: 0 0 0 2px var(--clr) , 0 0 0 6px #fff;
+}
